@@ -2,6 +2,7 @@
 using Autofac;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
+using CustomDI;
 
 namespace Problem
 {
@@ -11,7 +12,8 @@ namespace Problem
         {
             //StartSimple();
             //StartWindsor();
-            StartAutoFac();
+            StartCustomDi();
+            //StartAutoFac();
             Console.ReadKey();
         }
 
@@ -38,6 +40,16 @@ namespace Problem
             builder.RegisterType<BetterDataBase>().As<IDataBase>().SingleInstance();
             var container = builder.Build();
             var bl = container.Resolve<BusinessLogic>();
+            bl.DoSomeActions();
+        }
+
+        static void StartCustomDi()
+        {
+            var customContainer = new CustomDI.DiContainer();
+            customContainer.Register<BusinessLogic>(LifeStrategyEnum.Transient);
+            customContainer.Register<IDataBase, BetterDataBase>(LifeStrategyEnum.Singleton);
+            var bl = customContainer.Resolve<BusinessLogic>();
+            
             bl.DoSomeActions();
         }
     }
