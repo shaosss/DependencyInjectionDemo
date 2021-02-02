@@ -4,9 +4,9 @@ namespace Problem
 {
     public class BusinessLogic
     {
-        private readonly GoodDataBase _dataBase;
+        private readonly IDataBase _dataBase;
 
-        public BusinessLogic(GoodDataBase dataBase)
+        public BusinessLogic(IDataBase dataBase)
         {
             _dataBase = dataBase;
         }

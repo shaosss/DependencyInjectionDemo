@@ -2,7 +2,7 @@
 
 namespace Problem
 {
-    public class GoodDataBase
+    public class GoodDataBase : IDataBase
     {
         public DemoObject GetObject()
         {
