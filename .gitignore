@@ -1,0 +1,5 @@
+# Rider ignored files
+.idea/
+#Bins and obj
+[Bb]in/
+[Oo]bj/
