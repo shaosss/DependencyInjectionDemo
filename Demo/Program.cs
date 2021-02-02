@@ -6,7 +6,7 @@ namespace Problem
     {
         static void Main(string[] args)
         {
-            var someBl = new BusinessLogic();
+            var someBl = new BusinessLogic(new GoodDataBase());
             someBl.DoSomeActions();
         }
     }

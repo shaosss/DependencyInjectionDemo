@@ -4,7 +4,12 @@ namespace Problem
 {
     public class BusinessLogic
     {
-        private readonly GoodDataBase _dataBase = new GoodDataBase();
+        private readonly GoodDataBase _dataBase;
+
+        public BusinessLogic(GoodDataBase dataBase)
+        {
+            _dataBase = dataBase;
+        }
         
         public void DoSomeActions()
         {

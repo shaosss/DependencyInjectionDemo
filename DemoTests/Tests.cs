@@ -10,13 +10,15 @@ namespace DemoTests
         public void BusinessLogic_DoSomeActions_ActionsDone()
         {
             //arrange
-            var businessLogic = new BusinessLogic();
+            var dataBase = new GoodDataBase();
+            var businessLogic = new BusinessLogic(dataBase);
             
             //act
             businessLogic.DoSomeActions();
             
             //assert
-            //??? how to validate? 
+            var testObject = dataBase.GetObject();
+            Assert.IsTrue(testObject.NeedUpdate);
         }
     }
 }
