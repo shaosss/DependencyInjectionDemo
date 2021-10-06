@@ -1,3 +1,3 @@
 # DependencyInjectionDemo
 
-A small demo to show how very simple dpendency injection could be implemented.
+A small demo to show how very simple dependency injection could be implemented.
